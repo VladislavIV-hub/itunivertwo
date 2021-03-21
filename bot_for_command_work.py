@@ -78,9 +78,73 @@ def about_of_CMAD_departament(update, context):
 
 #Можливості для студентів
 def opportunities_for_the_students(update, context):
-    pass
-    #update.message.reply_text()
+    file=open()
+    kb_opportunities_for_the_student = [
+        [InlineKeyboardButton("Практика", callback_data = "practice")] ,
+        [InlineKeyboardButton("Проєктне навчання", callback_data = "Project_training")],
+        [InlineKeyboardButton("Дуальна освіта", callback_data = "Dual_education")],
+        [InlineKeyboardButton("Працевлаштування", callback_data = "Employment")]
+        ]
+    reply= InlineKeyboardMarkup(kb_opportunities_for_the_student)
+    update.callback_query.message.reply_text(text_opportunities_for_the_student, reply_markup = reply)
+def practice(update, context):
+    file = open('practice.txt','r')
+    text_practice = file.read()
+    file.close()
+    
+    
+    update.callback_query.message.reply_text(text_practice)
+    
 
+def Project_training(update, context):
+    file = open('Project_training.txt','r')
+    text_Project_training = file.read()
+    file.close()
+    
+    update.callback_query.message.reply_text(text_Project_training)
+    
+
+def Dual_education(update, context):
+    file = open('Dual_education.txt','r')
+    text_Dual_education = file.read()
+    file.close()
+
+    update.callback_query.message.reply_text(text_Dual_education)
+def Employment(update, context):
+    file = open('Employment.txt','r')
+    text_Employment = file.read()
+    file.close()
+
+    update.callback_query.message.reply_text(text_Employment)    
+def practice(update, context):
+    file = open('practice.txt','r')
+    text_practice = file.read()
+    file.close()
+    
+    
+    update.callback_query.message.reply_text(text_practice)
+    
+
+def Project_training(update, context):
+    file = open('Project_training.txt','r')
+    text_Project_training = file.read()
+    file.close()
+    
+    update.callback_query.message.reply_text(text_Project_training)
+    
+
+def Dual_education(update, context):
+    file = open('Dual_education.txt','r')
+    text_Dual_education = file.read()
+    file.close()
+
+    update.callback_query.message.reply_text(text_Dual_education)
+def Employment(update, context):
+    file = open('Employment.txt','r')
+    text_Employment = file.read()
+    file.close()
+
+    update.callback_query.message.reply_text(text_Employment)
 
 #Умови вступу
 def conditions_of_entry(update, context):
@@ -126,10 +190,11 @@ def main():
     #dp.add_handler(CommandHandler("about_of_CMAD_departament",about_of_CMAD_departament))
     dp.add_handler(CallbackQueryHandler(about_of_CMAD_departament,\
                                        pattern = "about_of_CMAD_departament"))
-    dp.add_handler(CallbackQueryHandler(opportunities_for_the_students,\
-                                       pattern = "opportunities_for_the_students"))
-    dp.add_handler(CallbackQueryHandler(conditions_of_entry,\
-                                       pattern = "conditions_of_entry"))
+    dp.add_handler(CallbackQueryHandler(opportunities_for_the_student,pattern = 'opportunities_for_the_student'))
+    dp.add_handler(CallbackQueryHandler(practice,pattern = 'practice'))
+    dp.add_handler(CallbackQueryHandler(Project_training,pattern = 'Project_training'))
+    dp.add_handler(CallbackQueryHandler(Dual_education,pattern = 'Dual_education'))
+    dp.add_handler(CallbackQueryHandler(Employment,pattern = 'Employment'))
     
     #Если текст будет написан вне команд - вызовется эхобот Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
