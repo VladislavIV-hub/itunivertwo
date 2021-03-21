@@ -90,15 +90,17 @@ def about_of_CMAD_departament(update, context):
 
 #Можливості для студентів
 def opportunities_for_the_students(update, context):
-    file=open()
-    kb_opportunities_for_the_student = [
+    file=open('opportunities_for_the_students','r')
+    text_opportunities_for_the_students=file.read()
+    file.close()
+    kb_opportunities_for_the_students = [
         [InlineKeyboardButton("Практика", callback_data = "practice")] ,
         [InlineKeyboardButton("Проєктне навчання", callback_data = "Project_training")],
         [InlineKeyboardButton("Дуальна освіта", callback_data = "Dual_education")],
         [InlineKeyboardButton("Працевлаштування", callback_data = "Employment")]
         ]
     reply= InlineKeyboardMarkup(kb_opportunities_for_the_student)
-    update.callback_query.message.reply_text(text_opportunities_for_the_student, reply_markup = reply)
+    update.callback_query.message.reply_text(text_opportunities_for_the_students, reply_markup = reply)
 def practice(update, context):
     file = open('practice.txt','r')
     text_practice = file.read()
@@ -175,7 +177,7 @@ def main():
     #dp.add_handler(CommandHandler("about_of_CMAD_departament",about_of_CMAD_departament))
     dp.add_handler(CallbackQueryHandler(about_of_CMAD_departament,\
                                        pattern = "about_of_CMAD_departament"))
-    dp.add_handler(CallbackQueryHandler(opportunities_for_the_student,pattern = 'opportunities_for_the_student'))
+    dp.add_handler(CallbackQueryHandler(opportunities_for_the_students,pattern = 'opportunities_for_the_students'))
     dp.add_handler(CallbackQueryHandler(practice,pattern = 'practice'))
     dp.add_handler(CallbackQueryHandler(Project_training,pattern = 'Project_training'))
     dp.add_handler(CallbackQueryHandler(Dual_education,pattern = 'Dual_education'))
