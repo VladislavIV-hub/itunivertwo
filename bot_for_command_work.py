@@ -27,7 +27,7 @@ def read_content_from_file(file):
 def start(update, context):
     """Send a message when the command /start is issued."""
 
-    #content = "Привет, я бот-экскурсовод! Помогу разобраться с кафедрой и её направлениями"
+    file=open('start.txt','r')
 
 ###############################################################
     #Данные о пользователе. Сохраняются в файл users.txt
