@@ -25,11 +25,22 @@ def read_content_from_file(file):
 #Error handlers also receive the raised TelegramError object in error.
 
 def start(update, context):
-  file=open('start.txt','r')
     """Send a message when the command /start is issued."""
+    file = open('start.txt','r')
+    content = file.read()
+    file.close()
 
-    file=open('start2.txt','r')
+    kb_start = [
+        [InlineKeyboardButton("Кафедра КМАД", callback_data = "about_of_CMAD_departament")],
+        [InlineKeyboardButton("Можливості для студентів", callback_data = "opportunities_for_the_student")],
+        [InlineKeyboardButton("Умови послугу", callback_data = "conditions_of_entry")]
+        ]
+ 
 
+    reply= InlineKeyboardMarkup(kb_start)
+
+    update.message.reply_text(content, reply_markup = reply)
+    
 ###############################################################
     #Данные о пользователе. Сохраняются в файл users.txt
     user = update.message.from_user
@@ -103,7 +114,8 @@ def Project_training(update, context):
     file.close()
     
     update.callback_query.message.reply_text(text_Project_training)
-    
+    url_photo = 'https://www.instagram.com/p/CLTrdlfhWIg/'
+    update.message.bot.send_photo(chat_id = update.message.chat.id,photo = url_photo)
 
 def Dual_education(update, context):
     file = open('Dual education.txt','r')
