@@ -97,7 +97,7 @@ def practice(update, context):
     
 
 def Project_training(update, context):
-    file = open('Project_training.txt','r')
+    file = open('Project training.txt','r')
     text_Project_training = file.read()
     file.close()
     
@@ -105,7 +105,7 @@ def Project_training(update, context):
     
 
 def Dual_education(update, context):
-    file = open('Dual_education.txt','r')
+    file = open('Dual education.txt','r')
     text_Dual_education = file.read()
     file.close()
 
@@ -116,35 +116,7 @@ def Employment(update, context):
     file.close()
 
     update.callback_query.message.reply_text(text_Employment)    
-def practice(update, context):
-    file = open('practice.txt','r')
-    text_practice = file.read()
-    file.close()
-    
-    
-    update.callback_query.message.reply_text(text_practice)
-    
 
-def Project_training(update, context):
-    file = open('Project_training.txt','r')
-    text_Project_training = file.read()
-    file.close()
-    
-    update.callback_query.message.reply_text(text_Project_training)
-    
-
-def Dual_education(update, context):
-    file = open('Dual_education.txt','r')
-    text_Dual_education = file.read()
-    file.close()
-
-    update.callback_query.message.reply_text(text_Dual_education)
-def Employment(update, context):
-    file = open('Employment.txt','r')
-    text_Employment = file.read()
-    file.close()
-
-    update.callback_query.message.reply_text(text_Employment)
 
 #Умови вступу
 def conditions_of_entry(update, context):
