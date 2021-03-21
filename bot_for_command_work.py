@@ -25,9 +25,10 @@ def read_content_from_file(file):
 #Error handlers also receive the raised TelegramError object in error.
 
 def start(update, context):
+  file=open('start.txt','r')
     """Send a message when the command /start is issued."""
 
-    file=open('start.txt','r')
+    file=open('start2.txt','r')
 
 ###############################################################
     #Данные о пользователе. Сохраняются в файл users.txt
