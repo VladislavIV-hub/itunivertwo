@@ -12,6 +12,52 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+
+contents = {'start' : {'text' :['data2/start1.txt','data2/start2.txt'],
+                       'photo':[],
+                       'next_menu': 
+                          {'kafedra' : {'text' :['data2/start_kafedra.txt'],
+                                        'photo': [],
+                                    'next_menu':{ 'vykladachi'  : {'text' : ['data2/start_kafedra_vykladachi_with_url.txt'],
+                                                                 'photo': []},
+                                                'vidminnosti' : {'text' : ['data2/start_kafedra_vidminnosti.txt'],
+                                                                 'photo': []},
+                                                'istoria'     : {'text' : ['data2/sstart_kafedra_istoria.txt'],
+                                                                 'photo': ['data2/start_kafedra_istoria_urls_photo.txt']},
+                                                'auditorii'   : {'text' : ['data2/start_kafedra_auditorii.txt'],
+                                                                 'photo': ['data2/start_kafedra_auditorii_urls_photo.txt']},
+                                                'vypusnyki'   : {'text' : ['data2/start_kafedra_vypusnyki_with_url.txt'],
+                                                                 'photo': []},
+                                    }},
+                       'mozhlyvosti' :{'text' : ['data2/start_mozhlyvosti.txt'],
+                                       'photo': [],
+                                    'next_menu': {'proektnnavch'   : {'text': ['data2/start_mozhlyvosti_proektnnavch_with_ulr.txt'],
+                                                                    'photo':[]},
+                                                'dualosvita'     : {'text': ['data2/start_mozhlyvosti_dualoscita.txt'],
+                                                                    'photo':[]},
+                                                'pratsevlashuv'  : {'text': ['data2/start_mozhlyvosti_pratsevlashtuv.txt'],
+                                                                    'photo':[]},
+                                                'praktika'       : {'text': ['data2/start_mozhlyvosti_praktika.txt'],
+                                                                    'photo':[]},
+                                        }},
+                       'umovy'    : {'text' : ['data/start_umovy.txt'],
+                                       'photo': [],
+                                    'next_menu': {'predmetiZNO'     : {'text': ['data2/start_umovy_predmetiZNO.txt'],
+                                                                    'photo':[]},
+                                                'rozrakhunokBalu' : {'text': ['data2/start_umovy_rozrakhunokBalu.txt'],
+                                                                    'photo':[]},
+                                                'etapy'           : {'text': ['data2/start_umovy_etapy.txt'],
+                                                                    'photo':[]},
+                                                'posylannya'      : {'text': ['data2/start_umovy_posylannya_with_url.txt'],
+                                                                    'photo':[]},
+                                                'kilkistMists'    : {'text': ['data2/start_umovy_kilkistMists.txt'],
+                                                                    'photo':[]},
+                                      }}
+                     }}
+            }
+
+
+
 #Универсальная функция для считывания данных с файла file
 def read_content_from_file(file):
     global text
